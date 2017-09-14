@@ -1,7 +1,7 @@
 ---
 title: "Getting started with git"
 teaching: 20
-exercises: 0
+exercises: 5
 questions:
 - "What are repositories and how are they created?"
 - "What do `add` and `commit` mean?"
@@ -227,3 +227,68 @@ along with metadata about who made the commit and at what time.
 But at the moment our changes are only recorded locally, on our computer. If we wanted to 
 work collaboratively with someone else they would have no way of seeing what we've done.
 We will fix that in the next episode by using GitHub to share our work.
+
+
+> ## Committing Multiple Files
+>
+> The staging area can hold changes from any number of files
+> that you want to commit as a single snapshot.
+>
+> 1. Create a new file `first-chapter.md` and add some text to it.
+> 2. Create a new file `second-chapter.md`, add some text to it as well.
+> 3. Add changes from both files to the staging area,
+> and commit those changes.
+>
+> > ## Solution
+> >
+> > First we make our changes to the `first-chapter.md` and `second-chapter.md` files:
+> >
+> > ~~~
+> > $ nano first-chapter.md
+> > $ cat first-chapter.md
+> > ~~~
+> > {: .bash}
+> > ~~~
+> > The first chapter of my version controlled book about version control in libraries.
+> > ~~~
+> > {: .output}
+> > ~~~
+> > $ nano second-chapter.md
+> > $ cat second-chapter.md
+> > ~~~
+> > {: .bash}
+> > ~~~
+> > A chapter about Git in libraries.
+> > ~~~
+> > {: .output}
+> > Now you can add both files to the staging area. We can do that in one line:
+> >
+> > ~~~
+> > $ git add first-chapter.md second-chapter.md
+> > ~~~
+> > {: .bash}
+> >
+> > Or with multiple commands:
+> >
+> > ~~~
+> > $ git add first-chapter.md
+> > $ git add second-chapter.md
+> > ~~~
+> > {: .bash}
+> >
+> > Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
+> >
+> > ~~~
+> > $ git commit -m "Add outline for my new book"
+> > ~~~
+> > {: .bash}
+> > ~~~
+> > [master cc127c2]
+> >  Add outline to my new book
+> >  2 files changed, 2 insertions(+)
+> >  create mode 100644 first-chapter.md
+> >  create mode 100644 second-chapter.md
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
